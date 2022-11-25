@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        // make sure that the game manager is a singleton
+        if (GameManager.manager != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         manager = this;
+        // save the state everytime when we load a new scene
+        SceneManager.sceneLoaded += LoadState;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Resources
@@ -19,10 +30,17 @@ public class GameManager : MonoBehaviour
 
     // References
     public Player player;
+    public FloatingTextManager floatingTextManager; // a singleton as well
 
     // Logic
     public int pesos;
     public int experience;
+
+    // floating text
+    public void ShowText(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        floatingTextManager.Show(message, fontSize, color, position, motion, duration);
+    }
 
     // Save/Load State
     /*
@@ -39,9 +57,10 @@ public class GameManager : MonoBehaviour
         s += experience.ToString() + "|";
         s += "0";
         PlayerPrefs.SetString("SaveState", s);
+        Debug.Log("savestate");
     }
 
-    public void LoadState()
+    public void LoadState(Scene s, LoadSceneMode mode)
     {
         if (!PlayerPrefs.HasKey("SaveState"))
         {
@@ -53,5 +72,7 @@ public class GameManager : MonoBehaviour
         pesos = int.Parse(data[1]);
         experience = int.Parse(data[2]);
         // Change the weapon level
+
+        Debug.Log("loadstate");
     }
 }
