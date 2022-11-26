@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyHitbox : Collectable
 {
     // damage
-    public int enemyDamage;
-    public float pushForce;
+    public int enemyDamage = 1;
+    public float pushForce = 1;
 
     protected override void OnCollide(Collider2D coll)
     {

@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public FloatingTextManager floatingTextManager; // a singleton as well
 
     // Logic
-    public int pesos;
+    public int pesos = 0;
     public int experience;
 
     // floating text
@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
         // Change player skin
         pesos = int.Parse(data[1]);
+        Debug.Log(pesos);
         experience = int.Parse(data[2]);
         // Change the weapon level
 
