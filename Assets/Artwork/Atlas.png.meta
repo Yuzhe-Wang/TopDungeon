@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 99
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1417,7 +1417,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1425,6 +1425,48 @@ TextureImporter:
       bones: []
       spriteID: 00f1a4941d96344e6b1f484fec1ce656
       internalID: -1167350303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5206e1918dc094054b2b98ffb0d37ad4
+      internalID: 614484886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9466dbd4dc74a4eaf074aed28e598b
+      internalID: 707461045
       vertices: []
       indices: 
       edges: []
@@ -1469,6 +1511,7 @@ TextureImporter:
       chest_1: -864921799
       enemy_0: -916554001
       torch_4: -1742224573
+      boss_0: 614484886
       weapon_5: -1265381646
       pillar_3: 889115980
       menu_0: -1167350303
@@ -1480,6 +1523,7 @@ TextureImporter:
       floor_0: -1791046168
       player_1: 511128067
       weapon_0: -618947399
+      enemy_1: 707461045
       pillar_4: 1561067956
       weapon_1: 976933350
       wall_2: 551344119

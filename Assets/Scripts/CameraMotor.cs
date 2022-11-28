@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMotor : MonoBehaviour
 {
     // the current focus position of the camera
-    public Transform lookAt;
+    private Transform lookAt;
 
     // the camera should be bounded within the following range with respect to the player
     public float boundX = 0.15f;
@@ -14,7 +14,7 @@ public class CameraMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        lookAt = GameObject.Find("Player").transform;
     }
 
     // late update for camera related stuff
